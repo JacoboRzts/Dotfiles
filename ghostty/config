@@ -1,0 +1,40 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 12
+# theme = dark:Ayu,light:Ayu Light
+theme = dark:Vague,light:CLRS
+title = "Ghostty"
+window-subtitle = false
+
+background-opacity = 1.0
+window-theme = ghostty
+
+window-padding-x = 5
+window-padding-y = 0
+window-padding-balance = true
+window-padding-color = extend
+window-height = 32
+window-width = 128
+
+quick-terminal-position = center
+shell-integration = zsh
+mouse-hide-while-typing = true
+
+# Keybinds ----------------------------------------------------------
+
+keybind = ctrl+l=clear_screen
+keybind = ctrl+w=toggle_window_decorations
+
+keybind = ctrl+shift+w=close_surface
+keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+right=goto_split:right
+keybind = ctrl+shift+up=goto_split:up
+keybind = ctrl+shift+down=goto_split:down
+
+# Palette -----------------------------------------------------------
+# Owner color
+palette = 230=#F3BE7C
+# Group color
+palette = 187=#ED9F40
+# Size color
+palette = 229=#BB9DBD
+
