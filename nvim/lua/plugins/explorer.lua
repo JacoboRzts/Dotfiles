@@ -18,7 +18,7 @@ return {
                 win = "list",
                 title = "{source} {live} {flags}",
                 title_pos = "left",
-                border = "solid"
+                border = "none"
               },
             },
           },
@@ -26,4 +26,12 @@ return {
       },
     },
   },
+  init = function()
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        vim.api.nvim_set_hl(0, "SnacksPickerList", { bg = "NONE" })
+        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "NONE" })
+      end,
+    })
+  end,
 }
