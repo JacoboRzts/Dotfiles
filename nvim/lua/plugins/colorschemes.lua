@@ -5,7 +5,9 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require("vague").setup({})
+      require("vague").setup({
+        transparent = true,
+      })
     end,
   },
 
