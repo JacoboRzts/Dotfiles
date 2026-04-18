@@ -13,6 +13,8 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.opt_local.spell = true
     vim.opt_local.spelllang = "es,en"
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
   end,
 })
 
@@ -89,7 +91,7 @@ vim.api.nvim_create_autocmd("FileType", {
               table.remove(output)
             end
             if #output == 0 then
-              vim.notify("run.out terminó sin output (exit code: " .. code .. ")", vim.log.levels.INFO)
+              vim.notify("run.out ends whitout output (exit code: " .. code .. ")", vim.log.levels.INFO)
               return
             end
             vim.fn.setqflist({}, "r", {
