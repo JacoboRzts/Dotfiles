@@ -4,7 +4,6 @@ return {
     picker = {
       sources = {
         explorer = {
-          -- auto_close = true,
           layout = {
             {
               preview = true
@@ -12,7 +11,7 @@ return {
             layout = {
               box = "vertical",
               width = 32,
-              position = 'right',
+              position = 'left',
               border = "none",
               {
                 win = "list",

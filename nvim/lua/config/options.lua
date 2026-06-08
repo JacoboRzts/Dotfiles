@@ -13,3 +13,6 @@ vim.diagnostic.config({
 -- Deshabilitar autoformateo al guardar
 vim.g.autoformat = false
 vim.opt.conceallevel = 0
+
+-- Desactivar tabline global
+vim.opt.showtabline = 0

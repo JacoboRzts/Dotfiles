@@ -1,3 +1,13 @@
+-- Dimming 
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   once = true,
+--   callback = function()
+--     vim.schedule(function()
+--       Snacks.dim()
+--     end)
+--   end,
+-- })
+
 -- MarkDown 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
