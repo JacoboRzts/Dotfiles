@@ -33,16 +33,30 @@ return {
       },
       lualine_c = {
         {
+          function()
+            local filename = vim.fn.expand('%:t')
+            local extension = vim.fn.expand('%:e')
+            local icon, icon_color = require('nvim-web-devicons').get_icon_color(filename, extension, { default = true })
+            return icon or ''
+          end,
+          color = function()
+            local filename = vim.fn.expand('%:t')
+            local extension = vim.fn.expand('%:e')
+            local _, icon_color = require('nvim-web-devicons').get_icon_color(filename, extension, { default = true })
+            return { fg = icon_color, bg = 'none' }
+          end,
+          padding = { left = 1, right = 0 },
+        },
+        {
           'filename',
-          icon = '',
           file_status = true,
-          color = { bg = 'none' , fg = 246 },
+          color = { bg = 'none', fg = 246 },
           path = 0,
           symbols = {
             unnamed = '',
-            newfile = '',
-            modified = '',
-            readonly = '',
+            newfile = '',
+            modified = '',
+            readonly = '',
           }
         },
       },
