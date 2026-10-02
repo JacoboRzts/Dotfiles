@@ -5,6 +5,7 @@
 -- Deshabilitar diagnósticos
 vim.diagnostic.config({
   virtual_text = false,
+  virtual_lines = false,
   signs = false,
   underline = false,
   update_in_insert = false,
@@ -16,3 +17,5 @@ vim.opt.conceallevel = 0
 
 -- Desactivar tabline global
 vim.opt.showtabline = 0
+
+-- vim.opt.winbar = "%t %m"

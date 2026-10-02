@@ -4,20 +4,17 @@ return {
     picker = {
       sources = {
         explorer = {
+          auto_close = true,
           layout = {
-            {
-              preview = true
-            },
             layout = {
-              box = "vertical",
-              width = 32,
-              position = 'left',
+              position = "right",
+              width = 30,
+              min_width = 30,
               border = "none",
+              box = "vertical",
               {
                 win = "list",
-                title = "{source} {live} {flags}",
-                title_pos = "left",
-                border = "none"
+                border = "none",
               },
             },
           },
@@ -25,12 +22,4 @@ return {
       },
     },
   },
-  init = function()
-    vim.api.nvim_create_autocmd("ColorScheme", {
-      callback = function()
-        vim.api.nvim_set_hl(0, "SnacksPickerList", { bg = "NONE" })
-        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "NONE" })
-      end,
-    })
-  end,
 }

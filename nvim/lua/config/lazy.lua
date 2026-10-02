@@ -20,8 +20,10 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- LaTeX Language
     { import = "lazyvim.plugins.extras.lang.tex" },
-    -- C/C++ Language 
+    -- C/C++ Language
     { import = "lazyvim.plugins.extras.lang.clangd" },
+    -- Java Language
+    { import = "lazyvim.plugins.extras.lang.java" },
     -- import/override with your plugins
     { import = "plugins" },
   },

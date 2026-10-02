@@ -16,7 +16,7 @@ return {
     -- }
     vim.g.vimtex_compiler_latexmk_engines = {
       _ = '-xelatex'
-    } 
+    }
     vim.g.vimtex_compiler_latexmk = {
       options = {
         "-shell-escape",
@@ -25,6 +25,8 @@ return {
         "-synctex=1",
         "-interaction=nonstopmode",
         "-halt-on-error",
+        "-auxdir=build",
+        "-outdir=.",
       },
     }
   end,

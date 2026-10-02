@@ -1,4 +1,22 @@
 return {
+  -- Oldworld
+  { 
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("oldworld").setup({
+        highlight_overrides = {
+          Normal = { bg = "NONE" },
+          NormalNC = { bg = "NONE" },
+          NormalFloat = { bg = "NONE" },
+          SignColumn = { bg = "NONE" },
+        },
+      })
+      vim.cmd.colorscheme("oldworld")
+    end,
+  },
+
   -- Vague
   {
     "vague-theme/vague.nvim",
@@ -40,11 +58,11 @@ return {
       update_interval = 500,
       set_dark_mode = function()
         vim.opt.background = "dark"
-        vim.cmd("colorscheme vague")
+        vim.cmd("colorscheme oldworld")
       end,
       set_light_mode = function()
         vim.opt.background = "light"
-        vim.cmd("colorscheme onedark")
+        vim.cmd("colorscheme  catppuccin-latte")
       end,
     },
   },

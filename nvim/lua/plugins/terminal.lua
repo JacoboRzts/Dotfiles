@@ -12,12 +12,13 @@ return {
       shell = vim.o.shell,
       win = {
         position = "bottom",
-        border = false,
-        height = 12,
+        border = "none",
+        height = 16,
         style = "terminal",
         wo = {
           winbar = "",
         },
+        auto_scroll = true,
       },
     },
   },

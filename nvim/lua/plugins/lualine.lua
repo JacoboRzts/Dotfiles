@@ -7,81 +7,63 @@ return {
       component_separators = { left = '', right = '' },
       globalstatus = true,
       theme = {
-        normal   = { a = { bg = 'none' }, b = { bg = 'none' }, c = { bg = 'none' } },
-        insert   = { a = { bg = 'none' }, b = { bg = 'none' }, c = { bg = 'none' } },
-        visual   = { a = { bg = 'none' }, b = { bg = 'none' }, c = { bg = 'none' } },
-        replace  = { a = { bg = 'none' }, b = { bg = 'none' }, c = { bg = 'none' } },
-        command  = { a = { bg = 'none' }, b = { bg = 'none' }, c = { bg = 'none' } },
-        inactive = { a = { bg = 'none' }, b = { bg = 'none' }, c = { bg = 'none' } },
+        normal   = { a = { bg = 'bg' }, b = { bg = 'none' }, c = { bg = 'none' } },
+        insert   = { a = { bg = 'bg' }, b = { bg = 'none' }, c = { bg = 'none' } },
+        visual   = { a = { bg = 'bg' }, b = { bg = 'none' }, c = { bg = 'none' } },
+        replace  = { a = { bg = 'bg' }, b = { bg = 'none' }, c = { bg = 'none' } },
+        command  = { a = { bg = 'bg' }, b = { bg = 'none' }, c = { bg = 'none' } },
+        inactive = { a = { bg = 'bg' }, b = { bg = 'none' }, c = { bg = 'none' } },
       }
     },
     sections = {
       lualine_a = {
         {
           'mode',
-          fmt = function(str) return str:lower() end,
+          fmt = function(str) return str end,
           icon = '',
-          color = { bg = 'none', fg = 33 },
+          color = { bg = 'bg', fg = '#445CCF' },
         },
       },
       lualine_b = {
         {
           'branch',
-          color = { bg = 'none', fg = 36 },
+          color = { bg = 'bg', fg = 36 },
           icon = '󰘬',
         },
       },
       lualine_c = {
         {
-          function()
-            local filename = vim.fn.expand('%:t')
-            local extension = vim.fn.expand('%:e')
-            local icon, icon_color = require('nvim-web-devicons').get_icon_color(filename, extension, { default = true })
-            return icon or ''
-          end,
-          color = function()
-            local filename = vim.fn.expand('%:t')
-            local extension = vim.fn.expand('%:e')
-            local _, icon_color = require('nvim-web-devicons').get_icon_color(filename, extension, { default = true })
-            return { fg = icon_color, bg = 'none' }
-          end,
-          padding = { left = 1, right = 0 },
-        },
-        {
           'filename',
-          file_status = true,
-          color = { bg = 'none', fg = 246 },
-          path = 0,
           symbols = {
+            readonly = '',
             unnamed = '',
-            newfile = '',
-            modified = '',
-            readonly = '',
-          }
-        },
+          },
+          color = { bg = 'bg' };
+        }
       },
       lualine_x = {
         {
-          color = { bg = 'none' };
+          'location',
+          color = { bg = 'bg', fg = "#27272a" };
         }
       },
       lualine_y = {
         {
           'diagnostics',
           symbols = {error = ' ', warn = ' ', info = ' ', hint = '󱐋 '},
-          color = { bg = 'none' },
+          color = { bg = 'bg' },
             -- Displays diagnostics status in color if set to true.
           colored = true,
-          -- Show diagnostics even if there are none.
+          -- Show diagnostics even if there are bg.
           always_visible = false,
         },
       },
       lualine_z = {
         {
           'diff',
-          color = { bg = 'none' },
+          color = { bg = 'bg' },
           separator = { left = '', right = ''},
-          symbols = { added = ' ', modified = ' ', removed = ' ' },
+          symbols = { added = ' ', modified = ' ', removed = '× ' },
         },
       },
     },
