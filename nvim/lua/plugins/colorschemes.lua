@@ -50,6 +50,13 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
   },
 
+  {
+    'projekt0n/github-nvim-theme',
+    name = 'github-theme',
+    lazy = false,
+    priority = 1000,
+  },
+
 
   -- Auto dark/light mode
   {
@@ -62,7 +69,7 @@ return {
       end,
       set_light_mode = function()
         vim.opt.background = "light"
-        vim.cmd("colorscheme  catppuccin-latte")
+        vim.cmd("colorscheme github_light")
       end,
     },
   },
