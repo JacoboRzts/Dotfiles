@@ -8,7 +8,7 @@ return {
   config = function()
     local hlgroups = require('cokeline.hlgroups')
     local hl_attr = hlgroups.get_hl_attr
-    vim.api.nvim_set_hl(0, 'MyTabLineFill', { none = hl_attr("TabLine", "bg") })
+    vim.api.nvim_set_hl(0, 'MyTabLineFill', { bg = hl_attr("TabLine", "none") })
     require("cokeline").setup({
       show_if_buffers_are_at_least = 1,
       fill_hl = 'MyTabLineFill',
@@ -20,10 +20,10 @@ return {
               and require("cokeline.hlgroups").get_hl_attr("Normal", "fg")
               or require("cokeline.hlgroups").get_hl_attr("Comment", "fg")
           end,
-          none = function(buffer)
+          bg = function(buffer)
             return buffer.is_focused
-              and require("cokeline.hlgroups").get_hl_attr("Normal", "none")
-              or require("cokeline.hlgroups").get_hl_attr("TabLine", "none")
+              and require("cokeline.hlgroups").get_hl_attr("Normal", "bg")
+              or require("cokeline.hlgroups").get_hl_attr("TabLine", "bg")
           end,
         },
         -- filename
@@ -36,10 +36,10 @@ return {
               and require("cokeline.hlgroups").get_hl_attr("Normal", "fg")
               or require("cokeline.hlgroups").get_hl_attr("Comment", "fg")
           end,
-          none = function(buffer)
+          bg = function(buffer)
             return buffer.is_focused
-              and require("cokeline.hlgroups").get_hl_attr("Normal", "none")
-              or require("cokeline.hlgroups").get_hl_attr("TabLine", "none")
+              and require("cokeline.hlgroups").get_hl_attr("Normal", "bg")
+              or require("cokeline.hlgroups").get_hl_attr("TabLine", "bg")
           end,
           bold = function(buffer)
             return buffer.is_focused
@@ -55,10 +55,10 @@ return {
               and require("cokeline.hlgroups").get_hl_attr("Normal", "fg")
               or require("cokeline.hlgroups").get_hl_attr("Comment", "fg")
           end,
-          none = function(buffer)
+          bg = function(buffer)
             return buffer.is_focused
-              and require("cokeline.hlgroups").get_hl_attr("Normal", "none")
-              or require("cokeline.hlgroups").get_hl_attr("TabLine", "none")
+              and require("cokeline.hlgroups").get_hl_attr("Normal", "bg")
+              or require("cokeline.hlgroups").get_hl_attr("TabLine", "bg")
           end,
         },
         -- close
@@ -72,10 +72,10 @@ return {
               and require("cokeline.hlgroups").get_hl_attr("DiagnosticError", "fg")
               or require("cokeline.hlgroups").get_hl_attr("Comment", "fg")
           end,
-          none = function(buffer)
+          bg = function(buffer)
             return buffer.is_focused
-              and require("cokeline.hlgroups").get_hl_attr("Normal", "none")
-              or require("cokeline.hlgroups").get_hl_attr("TabLine", "none")
+              and require("cokeline.hlgroups").get_hl_attr("Normal", "bg")
+              or require("cokeline.hlgroups").get_hl_attr("TabLine", "bg")
           end,
         },
         {
@@ -85,10 +85,10 @@ return {
               and require("cokeline.hlgroups").get_hl_attr("Normal", "fg")
               or require("cokeline.hlgroups").get_hl_attr("Comment", "fg")
           end,
-          none = function(buffer)
+          bg = function(buffer)
             return buffer.is_focused
-              and require("cokeline.hlgroups").get_hl_attr("Normal", "none")
-              or require("cokeline.hlgroups").get_hl_attr("TabLine", "none")
+              and require("cokeline.hlgroups").get_hl_attr("Normal", "bg")
+              or require("cokeline.hlgroups").get_hl_attr("TabLine", "bg")
           end,
         },
       },
